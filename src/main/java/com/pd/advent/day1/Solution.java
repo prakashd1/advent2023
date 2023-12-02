@@ -12,16 +12,18 @@ public class Solution {
         Solution s = new Solution();
 
 
-        BufferedReader reader = InputUtil.readInput("./src/main/resources/day1/input.txt");
-        StringBuilder content = new StringBuilder();
-        String line;
-        int output = 0;
+        int output;
+        try (BufferedReader reader = InputUtil.readInput("./src/main/resources/day1/input.txt")) {
+
+            String line;
+            output = 0;
 
 
-        while ((line = reader.readLine()) != null) {
-            int num = s.getFirstNumber(line) * 10 + s.getLastNumber(line);
-            System.out.println(line + "=" + num);
-            output += num;
+            while ((line = reader.readLine()) != null) {
+                int num = s.getFirstNumber(line) * 10 + s.getLastNumber(line);
+                System.out.println(line + "=" + num);
+                output += num;
+            }
         }
         System.out.println(output);
     }

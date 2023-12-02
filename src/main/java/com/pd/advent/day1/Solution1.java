@@ -11,7 +11,7 @@ public class Solution1 {
         Solution1 s = new Solution1();
         int output;
         try (BufferedReader reader = InputUtil.readInput("./src/main/resources/day1/input.txt")) {
-            StringBuilder content = new StringBuilder();
+
             String line;
             output = 0;
 
