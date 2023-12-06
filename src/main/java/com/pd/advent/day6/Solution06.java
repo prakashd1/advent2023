@@ -3,10 +3,6 @@ package com.pd.advent.day6;
 import com.pd.advent.InputUtil;
 
 import java.io.BufferedReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class Solution06 {
 
@@ -34,11 +30,11 @@ public class Solution06 {
             long time = times[i];
             long distance = distances[i];
             int exceed = 0;
-            for(int j=0;j<=time;j++){
-                long currDistance = j * (time-j);
-                if(currDistance>distance) exceed++;
+            for (int j = 0; j <= time; j++) {
+                long currDistance = j * (time - j);
+                if (currDistance > distance) exceed++;
             }
-            result*=exceed;
+            result *= exceed;
 
         }
         return result;
@@ -50,9 +46,9 @@ public class Solution06 {
             String[] y1 = x1[1].split("\\s");
 
             StringBuilder sb = new StringBuilder();
-            for(String y: y1){
+            for (String y : y1) {
                 y = y.trim();
-                if(!y.isEmpty() && !y.isBlank()){
+                if (!y.isEmpty() && !y.isBlank()) {
                     sb.append(y);
 
                 }
@@ -61,15 +57,14 @@ public class Solution06 {
             times[0] = Long.parseLong(sb.toString());
 
 
-
         } else if (line.startsWith("Distance: ")) {
             String[] x1 = line.split(":");
             String[] y1 = x1[1].split("\\s");
 
             StringBuilder sb = new StringBuilder();
-            for(String y: y1){
+            for (String y : y1) {
                 y = y.trim();
-                if(!y.isEmpty() && !y.isBlank()){
+                if (!y.isEmpty() && !y.isBlank()) {
                     sb.append(y);
 
                 }
