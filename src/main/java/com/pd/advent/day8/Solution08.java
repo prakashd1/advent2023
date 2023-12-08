@@ -41,28 +41,26 @@ public class Solution08 {
             }
 
         }
-
         count = reachZZZ();
-
         return count;
     }
 
     private long reachZZZ() {
-        int i = 0;
+        int count = 0;
         List<Integer> cycle = new ArrayList<>();
         while (true) {
-            for (int n = 0; n < aNodes.size(); n++) {
-                Direction node = directionMap.get(aNodes.get(n));
-                Direction next = instructions[i % instructions.length] == 'L' ? node.left : node.right;
+            for (int i = 0; i < aNodes.size(); i++) {
+                Direction node = directionMap.get(aNodes.get(i));
+                Direction next = instructions[count % instructions.length] == 'L' ? node.left : node.right;
                 if(next.name.endsWith("Z")){
-                    cycle.add(i+1);
+                    cycle.add(count+1);
                 }
-                aNodes.set(n, next.name);
+                aNodes.set(i, next.name);
             }
             if(cycle.size()==aNodes.size()){
                 break;
             }
-            i++;
+            count++;
 
         }
         int []arr = new int[cycle.size()];
